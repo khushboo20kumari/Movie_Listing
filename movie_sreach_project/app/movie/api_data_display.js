@@ -15,6 +15,7 @@ function Api_data_display({api_data,setData}){
             itemData={item}
             handleDelete={handleDelete}
           />
+          <Like_dislike_Compo index={index} setData={set}/>
           </div>
       ))}
       </div>

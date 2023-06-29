@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import  Api_data_display from './api_data_display';
 import Delete_button_compo from './delete_button_compo';
+import Like_dislike_Compo from './like_dislike_Compo';
 function MyComponent() {
   const [data, setData] = useState([]);
   const fetchData = () => {
@@ -21,6 +22,7 @@ function MyComponent() {
   return (
     <div>
       <Api_data_display api_data={data} setData={setData} />
+      <Like_dislike_Compo setData={setData}/>
     </div>
   );
 }
