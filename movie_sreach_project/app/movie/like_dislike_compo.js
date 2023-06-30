@@ -1,21 +1,28 @@
-function Like_dislike_Compo({index,setData}){
-      const handleLikeClick = (index) => {
-      setData((prevUsers) => {
-      const updatedUsers = [...prevUsers];
-      const user = updatedUsers[index];
-
-      user.countLike += 1;
-      return updatedUsers;
-    });
+import React, { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
+import { faThumbsDown } from '@fortawesome/free-solid-svg-icons';
+function LikeDislikeButton({ initialLikes = 0 }) {
+  const [likes, setLikes] = useState(initialLikes);
+  const handleLike = () => {
+    setLikes(likes + 1);
   };
-     return(
-       <div>
-            <p>Likes: {user.countLike}</p>
-            <button className="button" onClick={() => handleLikeClick(index)}>
-              <svg className="likebutton" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512">
-              </svg>
-            </button>
-       </div>
-     )
+
+  const handleDislike = () => {
+    if (likes > 0) {
+      setLikes(likes - 1);
+    }
+  };
+
+  return (
+    <div>
+      <FontAwesomeIcon icon={faThumbsUp} className="icon" onClick={handleLike} />
+      <span>{likes}</span>
+      <FontAwesomeIcon icon={faThumbsDown} onClick={handleDislike} className="icon"/>
+
+    </div>
+  );
 }
-export default Like_dislike_Compo;
+
+export default LikeDislikeButton;
+

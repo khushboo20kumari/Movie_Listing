@@ -1,0 +1,46 @@
+*{
+   box-sizing: border-box;
+}
+.header{
+   color:red;
+   background-color:#0E0E15;
+   width:1800px;
+   height:100px;
+}
+.col1{
+   width:200px;
+   border:1px solid red;
+   height:50px;
+   float:left;
+   line-height: 3;
+}
+.col2{
+   width:200px;
+   border:1px solid red;
+   height:50px;
+   float:left;
+   line-height: 3;
+}
+.col3{
+   width:200px;
+   border:1px solid red;
+   height:50px;
+   float:left;
+   margin-left:900px; 
+   line-height: 3;
+
+}
+.col4{
+   width:200px;
+   border:1px solid red;
+   height:50px;
+   float:left;
+   line-height: 3;
+}
+.hr{
+    background-color:red;
+    height:3px;
+}
+.heading{
+   margin-left:260px;
+}
