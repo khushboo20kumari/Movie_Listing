@@ -9,31 +9,31 @@ function Api_data_display({api_data,setData}){
       <div>
           {api_data.map((item, index) => (
             <div className="row">
-               <div>
-               
+            
+               <div className="infromation_item">   
                   <div key={item.id}>
                      <p>{item.title}</p>
                      <p>{item.overview}</p>
                       <LikeDislikeButton />
                   </div>
                   
-                  <div>     
+                  <div className="img">     
                      <img
                      src={`http://image.tmdb.org/t/p/w500${item.poster_path}`} className="img"/>
                   </div>   
                 
                   
                    
-                   <div>
+                   <div className="delete_button">
                      <Delete_button_compo
                        itemData={item} 
-                       handleDelete={handleDelete}
-                     />
+                       handleDelete={handleDelete}/>
                    </div>
+                   
+        
                   </div>
                   <hr/>
-                </div> 
-               
+                </div>        
            ))}
            </div>
    )
