@@ -1,7 +1,7 @@
-import Data from './main_data_compo';
+import DataComponent  from './main_data_compo';
 function Home() {
   return (
-      <Data/>
+      <DataComponent/>
    )
 }
 export default Home;
