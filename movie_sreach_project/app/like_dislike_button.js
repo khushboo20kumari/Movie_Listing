@@ -1,7 +1,7 @@
 "use client";
 import React, { useState} from 'react';
 import Sort_com from './sort_copo';
-function Like({data}){
+function Like({data,setData}){
       const [likes, setLikes] = useState({});
       const handleLike = (id) => {
         setLikes((prevLikes) => ({
@@ -17,7 +17,7 @@ function Like({data}){
       };
      return(
        <div>
-           <Sort_com data={data} handleLike={handleLike} handleDislike={handleDislike} likes={likes}/>
+           <Sort_com data={data} handleLike={handleLike} handleDislike={handleDislike} likes={likes} setData={setData}/>
        </div>
      )
 }

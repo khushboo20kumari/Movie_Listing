@@ -1,13 +1,14 @@
 import React from 'react';
-
-function Delete_button_compo({ itemData, handleDelete }) {
-  const handleClick = () => {
-    handleDelete(itemData.id);
+function DeleteButton({ itemData,setData,data}) {
+   const handleDelete = (itemId) => {//itemId it is telling about in  array  which id item have deleted//
+        setData(data.filter(item1 => item1.id !== itemId));
   };
-
   return (
-    <button onClick={handleClick}>Delete</button>
+  <>
+   
+    <img src="fluent_delete-32-regular.svg" onClick={() => handleDelete(itemData.id)}/>
+    </>
   );
 }
 
-export default Delete_button_compo;
+export default DeleteButton;
