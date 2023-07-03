@@ -1,7 +1,6 @@
 "use client";
 import React, { useState} from 'react';
-import Sort_com from './sort_copo';
-function Like({data,setData}){
+function LikeDislike_compo({data,setData,item}){
       const [likes, setLikes] = useState({});
       const handleLike = (id) => {
         setLikes((prevLikes) => ({
@@ -16,9 +15,11 @@ function Like({data,setData}){
       }));
       };
      return(
-       <div>
-           <Sort_com data={data} handleLike={handleLike} handleDislike={handleDislike} likes={likes} setData={setData}/>
-       </div>
+      <div className="">
+         <img src="Vector.png" onClick={() => handleLike(item.id)} />
+         <span> {[item.id] || 0}</span>
+         <img src="Icon - Like (1).png" onClick={() => handleDislike(item.id)} />
+      </div>
      )
 }
-export default Like;
+export default LikeDislike_compo;

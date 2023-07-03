@@ -87,10 +87,10 @@ const Movie_rows = () => {
 
    }
    ]
-  const [data,setData]=useState(array);
+  const [moviedata,setMoviedata]=useState(array);
   return(
         <div className="row">
-           {data.map((item) => (
+           {moviedata.map((item) => (
       
              <div className="row" key={item.id}>
                   <div className="col1">
@@ -104,7 +104,7 @@ const Movie_rows = () => {
                    </div>
                    
                    <div className="col3">
-                       <Action item={item} setData={setData} data={data}/>
+                       <Action item={item} setData={setMoviedata} moviedata={moviedata}/>
                    </div> 
              </div>
            ))}

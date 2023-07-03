@@ -20,6 +20,7 @@ function Sort_com({data,likes,handleLike,handleDislike,setData}){
                  <p>{item.release_date}</p>
                  <p>{item.type}</p>
                  <p>{item.Description}</p>
+                 
                  <img src="Vector.png" onClick={() => handleLike(item.id)} />
                   <Rating likes={likes} item={item}/>
                  <img src="Icon - Like (1).png" onClick={() => handleDislike(item.id)} />
@@ -44,4 +45,4 @@ function Sort_com({data,likes,handleLike,handleDislike,setData}){
    );
 }
 export default Sort_com;
- 
+

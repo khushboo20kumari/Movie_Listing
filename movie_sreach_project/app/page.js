@@ -1,14 +1,12 @@
-import DataComponent  from './main_data_compo';
-import Footer from './footer';
+import Movie_rows  from './movie_rows';
 import Header from './header';
 function Home() {
-  return (
-  <>
-      <Header/>
-      <DataComponent/>
-      <Footer/>
-      </>
-      
+    return (
+           <>
+              <Header/>
+              <Movie_rows/>
+            
+           </>
    )
 }
 export default Home;
