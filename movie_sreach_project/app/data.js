@@ -1,8 +1,4 @@
-"use client";
-import React, { useState} from 'react';
-import Action from './action';
-const Movie_rows = () => {
-  const array = [
+export const initalmoviearray=[
   {
     id: 1,
     name: "movie_name:Dear Zindagi",
@@ -86,31 +82,6 @@ const Movie_rows = () => {
    
 
    }
-   ]
-  const [moviedata,setMoviedata]=useState(array);
-  return(
-        <div className="row">
-           {moviedata.map((item) => (
-      
-             <div className="row" key={item.id}>
-                  <div className="col1">
-                      <img src={item.img} className="img" />
-                   </div>
-                    <div className="col2">
-                      <p>{item.name}</p>
-                      <p>{item.release_date}</p>
-                      <p>{item.type}</p>
-                      <p>{item.Description}</p>
-                   </div>
-                   
-                   <div className="col3">
-                       <Action item={item} setData={setMoviedata} moviedata={moviedata}/>
-                   </div> 
-             </div>
-           ))}
-        </div>
-       )
-}
+]
 
-export default Movie_rows;
-
+   
