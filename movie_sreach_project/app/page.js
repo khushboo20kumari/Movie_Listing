@@ -1,6 +1,7 @@
 "use client";
 import React, { useState, useEffect } from 'react';
 import  Movie_row from './movie_row';
+import Header from './header';
  function Page() {
    const [movieData, setMovieData] = useState([]);
    const [likes, setLikes] = useState({});
@@ -22,6 +23,7 @@ import  Movie_row from './movie_row';
    }, []);
    return (
        <div>
+       <Header/>
         {movieData.map((movie) => (
           <Movie_row
             key={movie.id}
