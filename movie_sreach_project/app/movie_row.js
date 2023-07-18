@@ -1,4 +1,5 @@
 import React from 'react';
+import Action_row from './action_row';
 function Movie_row(props) {
   return (
     <>
@@ -11,6 +12,7 @@ function Movie_row(props) {
           <p>{props.movie.original_title}</p>
           <p>{props.movie.release_date}</p>
           <p>{props.movie.overview}</p>
+          <Action_row/>
         </div>
       </div>
       <hr className="hr" />
