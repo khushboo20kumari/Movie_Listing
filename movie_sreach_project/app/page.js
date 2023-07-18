@@ -12,13 +12,14 @@
      fetch('https://api.themoviedb.org/3/movie/top_rated?api_key=89eef3426d167c3c8145a257ebe68357&')
  
       .then(response => response.json())
+      
       .then(movieData => {
-          setMovieData(movieData.results.slice(0, 10));
+          setMovieData(movieData.results.slice(0, 10))
           console.log(movieData);
        })
       
        .catch(error => {
-          console.error('Error fetching data:', error);
+          console.error('Error fetching data:', error)
         });
     };
 
@@ -26,15 +27,28 @@
        fetchData();
     }, []);
     
-    return(
+    
+    const handleDelete = (id) => {
+    
+         const updatedMoviedata = movieData.filter((movie) => movie.id !== id);
+         setMovieData(updatedMoviedata);
+     }    
+
+    
+     return(
     
        <div>
           <Header/>
        
           {movieData.map((movie) => (
+          
              <Movie_row
+             
                 key={movie.id}
                 movie={movie}
+                
+                onDelete={() => handleDelete(movie.id)}
+                
               />
            ))}
        
@@ -42,3 +56,4 @@
    );
  }
  export default Page;
+ 

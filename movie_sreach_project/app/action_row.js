@@ -1,10 +1,13 @@
  import Delete from './delete';
 
- function Action_row(){
+ function Action_row({onDelete}){
+ 
     return(
     
        <>
-         <Delete/>
+       
+         <Delete onDelete={onDelete}/>
+         
        </> 
     )
  }
