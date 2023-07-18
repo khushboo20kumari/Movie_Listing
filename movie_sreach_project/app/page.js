@@ -9,7 +9,7 @@ import  Movie_row from './movie_row';
      fetch('https://api.themoviedb.org/3/movie/top_rated?api_key=89eef3426d167c3c8145a257ebe68357&')
       .then(response => response.json())
       .then(movieData => {
-        setMovieData(movieData.results);
+        setMovieData(movieData.results.slice(0, 10));
         console.log(movieData);
       })
       .catch(error => {
