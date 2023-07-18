@@ -26,7 +26,7 @@
     useEffect(() => {
        fetchData();
     }, []);
-    
+    console.log(likes,"like")
     
     const handleDelete = (id) => {
     
@@ -35,6 +35,36 @@
      }    
 
     
+     const handleLike = (id) => {
+        console.log(id,"id")
+        const updatedLikes = { ...likes };
+               
+
+               if (updatedLikes[id] !== undefined){
+                    updatedLikes[id] += 1;
+                    
+               } else {
+                    updatedLikes[id] = 1;
+        }
+        
+        setLikes(updatedLikes);
+ 
+     };
+
+     const handleDislike = (id) => {
+         const updatedLikes = { ...likes };
+         
+         if (updatedLikes[id] !== undefined) {
+              updatedLikes[id] -= 1;
+              
+         } else {
+               pdatedLikes[id] = 1;
+               
+         }
+         setLikes(updatedLikes);
+     
+     };
+
      return(
     
        <div>
@@ -45,9 +75,16 @@
              <Movie_row
              
                 key={movie.id}
+                
                 movie={movie}
                 
                 onDelete={() => handleDelete(movie.id)}
+                
+                onLike={() => handleLike(movie.id)}
+                
+                onDislike={() => handleDislike(movie.id)}
+                
+                like={likes[movie.id]}
                 
               />
            ))}

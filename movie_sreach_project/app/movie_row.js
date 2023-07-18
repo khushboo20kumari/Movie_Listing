@@ -22,6 +22,9 @@
                   <Action_row
                    
                      onDelete={props.onDelete}
+                     onDislike={props.onDislike}
+                     onLike={props.onLike}
+                     like={props.like}
                   />
                </div>
                

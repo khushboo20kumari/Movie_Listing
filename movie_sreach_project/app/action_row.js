@@ -1,12 +1,14 @@
  import Delete from './delete';
-
- function Action_row({onDelete}){
+  
+ import  Rating from './rating';
+ function Action_row({onDelete,onLike, onDislike,like}){
  
     return(
     
        <>
        
          <Delete onDelete={onDelete}/>
+         <Rating onLike={onLike} onDislike={onDislike} onDislike={onDislike} like={like}/>
          
        </> 
     )
