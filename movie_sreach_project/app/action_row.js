@@ -1,6 +1,11 @@
-function Action_row(){
-   return(
-      <>hello</> 
-   )
-}
-export default Action_row;
+ import Delete from './delete';
+
+ function Action_row(){
+    return(
+    
+       <>
+         <Delete/>
+       </> 
+    )
+ }
+ export default Action_row;
