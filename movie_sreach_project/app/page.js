@@ -2,7 +2,7 @@
  import React, { useState, useEffect } from 'react';
  import  Movie_row from './movie_row';
  import Header from './header';
- 
+ import Add_movie from './add_movie';
  function Page() {
    const [movieData, setMovieData] = useState([]);
    const [likes, setLikes] = useState({});
@@ -29,7 +29,7 @@
     console.log(likes,"like")
     
     const handleDelete = (id) => {
-    
+         console.log(id,"delete")
          const updatedMoviedata = movieData.filter((movie) => movie.id !== id);
          setMovieData(updatedMoviedata);
      }    
@@ -40,7 +40,7 @@
         const updatedLikes = { ...likes };
         
               if (updatedLikes[id] !== undefined){
-                    updatedLikes[id] += 1;
+                    updatedLikes[id] +=  1;
                     
                } else {
                     updatedLikes[id] = 1;
@@ -66,21 +66,28 @@
      
      
      const sortedDataArray = movieData.sort((a, b) => {
+     
+         console.log(a,"a")
+         console.log(b,"b")
+         
          let likesA = 0;
          let likesB = 0;
 
          if (likes[a.id] !== undefined) {
             likesA = likes[a.id];
+            console.log(likesA,"likeAh ")
          }
 
-          if (likes[b.id] !== undefined) {
-       likesB = likes[b.id];
-     }
+         if (likes[b.id] !== undefined) {
+              likesB = likes[b.id];
+          }
 
-     return likesB - likesA;
-   });
+           return likesB - likesA;
+      });
 
-    
+       const addMovieData = (newData) => {
+           setMoviedata([...moviedata, newData]);
+       };
      
        return(
     
@@ -105,6 +112,7 @@
                 
               />
            ))}
+           <Add_movie addMovieData={addMovieData}/>
        
      </div>
    );
