@@ -38,9 +38,8 @@
      const handleLike = (id) => {
         console.log(id,"id")
         const updatedLikes = { ...likes };
-               
-
-               if (updatedLikes[id] !== undefined){
+        
+              if (updatedLikes[id] !== undefined){
                     updatedLikes[id] += 1;
                     
                } else {
@@ -64,13 +63,31 @@
          setLikes(updatedLikes);
      
      };
+     
+     
+     const sortedDataArray = movieData.sort((a, b) => {
+         let likesA = 0;
+         let likesB = 0;
 
-     return(
+         if (likes[a.id] !== undefined) {
+            likesA = likes[a.id];
+         }
+
+          if (likes[b.id] !== undefined) {
+       likesB = likes[b.id];
+     }
+
+     return likesB - likesA;
+   });
+
+    
+     
+       return(
     
        <div>
           <Header/>
        
-          {movieData.map((movie) => (
+          {sortedDataArray.map((movie) => (
           
              <Movie_row
              
@@ -93,4 +110,5 @@
    );
  }
  export default Page;
+ 
  
