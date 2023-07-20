@@ -85,8 +85,10 @@
            return likesB - likesA;
       });
 
-       const addMovieData = (newData) => {
-           setMoviedata([...moviedata, newData]);
+       const addMovieData = (newData) =>{
+       
+           setMovieData([...movieData, newData]);
+           
        };
      
        return(
